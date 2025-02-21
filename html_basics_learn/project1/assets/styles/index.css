@@ -1,0 +1,24 @@
+p{
+    background-color: rgb(2, 33, 82);
+    color: rgb(0, 255, 0);
+    padding: 10px;
+    border-radius: 20px;
+}
+
+h1{
+    color: rgb(229, 255, 0);
+}
+
+body{
+    background-color: rgb(36, 0, 70);
+    color: white;
+}
+
+.text-red{
+    color: red;
+}
+
+#first-p{
+    color: rgb(0, 225, 255);
+    font-family: monospace;
+}

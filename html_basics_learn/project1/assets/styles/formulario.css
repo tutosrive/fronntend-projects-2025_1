@@ -1,0 +1,28 @@
+body{
+    background-color: black;
+    text-align: center;
+    color: antiquewhite;
+}
+
+.inp-number{
+    background-color: rgb(0, 55, 100);
+    color: rgb(179, 255, 0);
+}
+
+label{
+    color: red
+}
+
+input{
+    box-shadow: 1px 1px 10px rgb(255, 238, 0);
+    margin: 10px;
+    background-color: rgb(64, 255, 47);
+    color: rgb(255, 0, 0);
+    font-family: fantasy;
+    font-size: 17px;
+    padding: 10px;
+}
+
+table{
+    border: 1px;
+}

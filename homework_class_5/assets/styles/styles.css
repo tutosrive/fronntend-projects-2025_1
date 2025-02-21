@@ -1,0 +1,25 @@
+body{
+    background-color: black;
+    text-align: center;
+    color: antiquewhite;
+}
+
+img{
+    /* background-color: aliceblue; */
+    border-radius: 20px;
+    margin: 20px;
+    /* box-shadow: 1px 1px 20px red; */
+    filter: drop-shadow(1px 1px 12px red);
+}
+
+h1, h2{
+    color: rgb(14, 0, 92);
+    text-shadow: 1px 1px 15px white;
+    font-family: fantasy;
+    letter-spacing: 4px;
+}
+
+p{
+    text-align: justify;
+    font-family: 'Courier New', Courier, monospace;
+}
