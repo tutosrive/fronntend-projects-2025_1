@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercado Libre</title>
+    <link rel="stylesheet" href="./assets/css/styles.css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous" />
+
+    <!-- javascript -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <!-- Contenedor de toda la página -->
+    <div class="container">
+      <!-- Contenedor de todo el "HEADER" -->
+      <div class="row container">
+        <!-- Primera parte del div (Logo, menú, búsqueda, envío gratis...) -->
+        <div class="row container">
+          <div class="col-2">
+            <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.111/mercadolibre/logo_large_plus.webp" alt="Logo de mercado libre" />
+          </div>
+          <div class="col-6">
+            <input type="text" class="form-control" name="buscador" id="buscador" placeholder="Search" />
+          </div>
+          <div class="col-4">
+            <img class="img-fluid" src="https://http2.mlstatic.com/D_NQ_665279-MLA82474368441_022025-OO.webp" alt="Publicidad de mercado libre" />
+          </div>
+        </div>
+        <!-- Segunda parte del "HEADER" (Amarillo) -->
+        <div class="row container">
+          <!-- Parte 1 de la segunda fila del "HEADER" -->
+          <div class="col-2">Ingrese su ubicación</div>
+          <!-- Centro de la segunda fila del "HEADER" -->
+          <div class="col-6 container row">
+            <div class="col-2"><p class="font-small">Categorías</p></div>
+            <div class="col-1"><p class="font-small">Ofertas</p></div>
+            <div class="col-1"><p class="font-small">Cupones</p></div>
+            <div class="col-2"><p class="font-small">Supermercado</p></div>
+            <div class="col-1"><p class="font-small">Moda</p></div>
+            <div class="col-3"><p class="font-small">Mercado Play</p></div>
+            <div class="col-1"><p class="font-small">Vender</p></div>
+            <div class="col-1"><p class="font-small">Ayuda</p></div>
+          </div>
+          <!-- Final de la segunda fila del "HEADER" -->
+          <div class="col-4 row container">
+            <div class="col-3"><p class="font-small">Crea tu cuenta</p></div>
+            <div class="col-4"><p class="font-small">Ingresa</p></div>
+            <div class="col-3"><p class="font-small">Mis compras</p></div>
+            <div class="col-2"><img class="img-small" src="./assets/img/cart_icon.png" alt="Ícono del 'carrito' de compras" /></div>
+          </div>
+        </div>
+      </div>
+      <!-- Contenido principal -->
+      <div class="row container" id="main-content">
+        <div class="col-3 bg-red">Sidebar</div>
+        <!-- Contenido de la página (Imágenes, tarjetas, en este caso, motos...) -->
+        <div class="col-9 bg-yellow">
+          <!-- Fila 1 de tarjetas de motos -->
+          <div class="row container align-items-center mx-0 p-0">
+            <!-- Moto 1, fila 1 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-1.png" class="img-top card-img-top" />
+                <div class="card-body">
+                  <p class="card-text mb-0"><small>Yamaha Mt03 2020</small></p>
+                  <p class="card-text mb-0">
+                    <small class="text-muted font-small">Por Gomez Motos </small>
+                    <img src="./assets/img/verified-blue.png" class="img-small" alt="Insignia de verificación" />
+                  </p>
+                  <h4>&dollar; 18.500.000</h4>
+                  <p class="card-text mb-0"><small>2020 &VerticalSeparator; 20.000 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 2, fila 1 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-2.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text font-small">Ducati Hypermotard 950 sp 2021 Nueva</p>
+                  <h4>&dollar; 85.000.000</h4>
+                  <p class="card-text mb-0"><small>2021 &VerticalSeparator; 2.600 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 3, fila 1 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-3.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Vendo Bmw Gs310 Modelo 2018</small></p>
+                  <h4>&dollar; 18.500.000</h4>
+                  <p class="card-text mb-0"><small>2018 &VerticalSeparator; 52.000 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fila 2 de tarjetas de motos -->
+          <div class="row container mx-0 p-0">
+            <!-- Moto 1, fila 2 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-4.png" class="img-top card-img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Royal Enfield Classic 500, 2019 Con Sidecar O Sidecar Solo</small></p>
+                  <h4>&dollar; 25.000.000</h4>
+                  <p class="card-text mb-0"><small>2019 &VerticalSeparator; 15.550 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 2, fila 2 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-5.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Honda Varadero Xl1000v 2007</small></p>
+                  <h4>&dollar; 30.000.000</h4>
+                  <p class="card-text mb-0"><small>2007 &VerticalSeparator; 37.000 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 3, fila 2 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-6.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Husqvarna 701 Enduro Lr</small></p>
+                  <h4>&dollar; 48.000.000</h4>
+                  <p class="card-text mb-0"><small>2020 &VerticalSeparator; 20.000 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fila 3 de tarjetas de motos -->
+          <div class="row container align-items-center mx-0 p-0">
+            <!-- Moto 1, fila 3 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-7.png" class="img-top card-img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Ducati Scrambler Icon 800</small></p>
+                  <h4>&dollar; 30.900.000</h4>
+                  <p class="card-text mb-0"><small>2016 &VerticalSeparator; 43.100 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 2, fila 3 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-8.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Bmw R 1250 Gs Adventure 2022</small></p>
+                  <h4>&dollar; 110.900.000</h4>
+                  <p class="card-text mb-0"><small>2022 &VerticalSeparator; 39.800 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 3, fila 3 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-9.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Bmw F750 Gs, Pantalla Tft. Case Original Bmw ,</small></p>
+                  <h4>&dollar; 59.000.000</h4>
+                  <p class="card-text mb-0"><small>2023 &VerticalSeparator; 9.619 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fila 4 de tarjetas de motos -->
+          <div class="row container align-items-center mx-0 p-0">
+            <!-- Moto 1, fila 4 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-10.png" class="img-top card-img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Bmw Ninet Urban Gs</small></p>
+                  <h4>&dollar; 57.000.000</h4>
+                  <p class="card-text mb-0"><small>2018 &VerticalSeparator; 20.000 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 2, fila 4 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-11.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text mb-0"><small>Yamaha Fz 250 2020</small></p>
+                  <p class="card-text mb-0">
+                    <small class="text-muted font-small">Por Gomez Motos </small>
+                    <img src="./assets/img/verified-blue.png" class="img-small" alt="Insignia de verificación" />
+                  </p>
+                  <h4>&dollar; 10.800.000</h4>
+                  <p class="card-text mb-0"><small>2020 &VerticalSeparator; 13.000 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 3, fila 4 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-12.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Bmw R1200 Gs Adventur Modelo 2016</small></p>
+                  <h4>&dollar; 69.900.000</h4>
+                  <p class="card-text mb-0"><small>2016 &VerticalSeparator; 90.000 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fila 5 de tarjetas de motos -->
+          <div class="row container align-items-center mx-0 p-0">
+            <!-- Moto 1, fila 5 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-13.png" class="img-top card-img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Royal Enfield 2022</small></p>
+                  <h4>&dollar; 15.200.000</h4>
+                  <p class="card-text mb-0"><small>2022 &VerticalSeparator; 28.000 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 2, fila 5 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-14.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Royal Enfield Himalayan 411</small></p>
+                  <h4>&dollar; 14.500.000</h4>
+                  <p class="card-text mb-0"><small>2021 &VerticalSeparator; 16.408 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+            <!-- Moto 3, fila 5 -->
+            <div class="col-4 p-2 bg-red">
+              <div class="card card-size-col">
+                <img src="./assets/img/mt-15.png" class="img-top" />
+                <div class="card-body">
+                  <p class="card-text"><small>Excelente Estado, Llantas Al 80%, Papeles Nuevos</small></p>
+                  <h4>&dollar; 69.900.000</h4>
+                  <p class="card-text mb-0"><small>2019 &VerticalSeparator; 31.000 Km</small></p>
+                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

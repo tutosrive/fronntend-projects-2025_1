@@ -1,0 +1,30 @@
+.font-small {
+  font-size: x-small;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+.bg-red {
+  background-color: red;
+}
+
+.img-small{
+    width: 20px;
+}
+
+.img-shadow{
+  filter: drop-shadow(5px 3px 1px black);
+}
+
+.img-top{
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.card-size-col{
+  height: 370px;
+  display: block;
+}
