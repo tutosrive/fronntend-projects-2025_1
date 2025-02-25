@@ -1,3 +1,9 @@
+body{
+  background-color: rgb(237, 237, 237) !important;
+  width: 98.7vw;
+  margin: 0;
+}
+
 .font-small {
   font-size: x-small;
 }
@@ -22,9 +28,15 @@
   width: 100%;
   object-fit: cover;
   margin: 0 auto;
+  border-radius: 3px 3px 0 0;
 }
 
 .card-size-col{
   height: 370px;
   display: block;
+}
+
+.sw-rounded{
+  padding: 10px;
+  border-radius: 10px;
 }

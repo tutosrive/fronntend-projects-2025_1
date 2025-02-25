@@ -18,11 +18,11 @@
   </head>
   <body>
     <!-- Contenedor de toda la página -->
-    <div class="container">
+    <div class="container mw-100 p-0 mx-0">
       <!-- Contenedor de todo el "HEADER" -->
-      <div class="row container">
+      <div class="row container bg-yellow mw-100 p-0 mx-0 justify-content-center">
         <!-- Primera parte del div (Logo, menú, búsqueda, envío gratis...) -->
-        <div class="row container">
+        <div class="row container p-2">
           <div class="col-2">
             <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.111/mercadolibre/logo_large_plus.webp" alt="Logo de mercado libre" />
           </div>
@@ -58,14 +58,136 @@
         </div>
       </div>
       <!-- Contenido principal -->
-      <div class="row container" id="main-content">
-        <div class="col-3 bg-red">Sidebar</div>
+      <!-- mx-auto, para centrar el contenido -->
+      <div class="row container mx-auto" id="main-content">
+        <!-- SideBar -->
+        <div class="col-3 mt-4">
+          <p><small class="text-muted">Carros, Motos y Otros</small></p>
+          <h5 class="mb-0">Motos</h5>
+          <p><small class="text-muted">6.827 resultados</small></p>
+          <a href="#"><img src="./assets/img/bookmark.png" class="img-small" alt="bookmark" /><small>Guardar esta búsqueda</small></a>
+          <!-- Switches "con financiamiento" y "Publicados Hoy" -->
+          <div class="container mt-5 p-0">
+            <div class="form-group">
+              <div class="d-flex justify-content-between align-items-center bg-white sw-rounded">
+                <label for="financiamiento" class="mb-0"><small>Con financiamiento</small></label>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" id="financiamiento" />
+                  <label class="custom-control-label" for="financiamiento"></label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="d-flex justify-content-between align-items-center bg-white sw-rounded">
+                <label for="publicadosHoy" class="mb-0"><small>Publicados hoy</small></label>
+                <div class="custom-control custom-switch">
+                  <input type="checkbox" class="custom-control-input" id="publicadosHoy" />
+                  <label class="custom-control-label" for="publicadosHoy"></label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tiendas oficiales -->
+          <div class="mt-4">
+            <h6>Tiendas Oficiales</h6>
+            <p><small class="text-muted">Solo tiendas oficiales &lpar;1.170&rpar;</small></p>
+          </div>
+          <!-- Ubicación -->
+          <div class="mt-4">
+            <h6>Ubicación</h6>
+            <p class="mb-0"><small class="text-muted">Bogotá D.C. &lpar;2.836&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Antioquia &lpar;2.1132&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Valle Del Cauca &lpar;511&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Cundinamarca &lpar;370&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Santander &lpar;210&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Risaralda &lpar;33&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Tolima &lpar;110&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Atlántico &lpar;82&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Caldas &lpar;75&rpar;</small></p>
+            <a href="#"><small>Mostrar Más</small></a>
+          </div>
+          <!-- Marca -->
+          <div class="mt-4">
+            <h6>Marca</h6>
+            <p class="mb-0"><small class="text-muted">Yamaha&lpar;1.106&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">BMW&lpar;660&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Suzuki&lpar;576&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Honda&lpar;544&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Bajaj&lpar;468&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">AKT&lpar;423&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">KTM&lpar;361&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Kawasaki&lpar;261&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Victory&lpar;233&rpar;</small></p>
+            <a href="#"><small>Mostrar más</small></a>
+          </div>
+          <!-- Modelo -->
+          <div class="mt-4">
+            <h6>Modelo</h6>
+            <p class="mb-0"><small class="text-muted">Gixxer 250 &lpar;93&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">DOMINAR 400 &lpar;84&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">F 750 Gs &lpar;55&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">F 850 Gs &lpar;54&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">HIMALAYAN &lpar;52&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">G 310 Gs &lpar;50&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">FZ25 &lpar;49&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">NKD 125 &lpar;47&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">N&minus;MAX&lpar;46&rpar;</small></p>
+            <a href="#"><small>Mostrar más</small></a>
+          </div>
+          <!-- Cilindrada -->
+          <div class="mt-4">
+            <h6>Cilindrada</h6>
+            <p class="mb-0"><small class="text-muted">155 cc o menos &lpar;2.168&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">155 a 300 cc &lpar;2.095&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">300 cc o más &lpar;2.611&rpar;</small></p>
+
+            <!-- Máximo - Mínimo -->
+            <form>
+              <div class="form-row">
+                <div class="col"><input class="col" type="text" name="" id="" placeholder="Máximo" /></div>
+                <p>&minus;</p>
+                <div class="col"><input class="col" type="text" name="" id="" placeholder="Mínimo" /></div>
+                <button class="rounded-circle bg-secondary">
+                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="rgba(0, 0, 0, 0.9)"><path d="M8.27686 4.34644L7.42834 5.19496L12.224 9.99059L7.42334 14.7912L8.27187 15.6397L13.921 9.99059L8.27686 4.34644Z" fill="rgba(0, 0, 0, 0.9)"></path></svg>
+                </button>
+              </div>
+            </form>
+          </div>
+          <!-- Tipo de moto -->
+          <div class="mt-4">
+            <h6>Tipo de moto</h6>
+            <p class="mb-0"><small class="text-muted">Calle &lpar;1.113&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Naked &lpar;1.089&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Touring &lpar;950&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Scooters &lpar;705&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Deportivas &lpar;602&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Enduro &lpar;408&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Doble propósito &lpar;260&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Cuatrimotos &lpar;160&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">Chopper &lpar;99&rpar;</small></p>
+            <a href="#"><small>Mostrar más</small></a>
+          </div>
+          <!-- Año -->
+          <div class="mt-4">
+            <h6>Año</h6>
+            <p class="mb-0"><small class="text-muted">2026 &lpar;93&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">2025 &lpar;481&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">2024 &lpar;885&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">2023 &lpar;1.102&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">2022 &lpar;1.106&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">2021 &lpar;532&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">2020 &lpar;523&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">2019 &lpar;357&rpar;</small></p>
+            <p class="mb-0"><small class="text-muted">2018 &lpar;273&rpar;</small></p>
+            <a href="#"><small>Mostrar más</small></a>
+          </div>
+        </div>
         <!-- Contenido de la página (Imágenes, tarjetas, en este caso, motos...) -->
-        <div class="col-9 bg-yellow">
+        <div class="col-9">
           <!-- Fila 1 de tarjetas de motos -->
           <div class="row container align-items-center mx-0 p-0">
             <!-- Moto 1, fila 1 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-1.png" class="img-top card-img-top" />
                 <div class="card-body">
@@ -81,7 +203,7 @@
               </div>
             </div>
             <!-- Moto 2, fila 1 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-2.png" class="img-top" />
                 <div class="card-body">
@@ -93,7 +215,7 @@
               </div>
             </div>
             <!-- Moto 3, fila 1 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-3.png" class="img-top" />
                 <div class="card-body">
@@ -108,7 +230,7 @@
           <!-- Fila 2 de tarjetas de motos -->
           <div class="row container mx-0 p-0">
             <!-- Moto 1, fila 2 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-4.png" class="img-top card-img-top" />
                 <div class="card-body">
@@ -120,7 +242,7 @@
               </div>
             </div>
             <!-- Moto 2, fila 2 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-5.png" class="img-top" />
                 <div class="card-body">
@@ -132,7 +254,7 @@
               </div>
             </div>
             <!-- Moto 3, fila 2 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-6.png" class="img-top" />
                 <div class="card-body">
@@ -147,7 +269,7 @@
           <!-- Fila 3 de tarjetas de motos -->
           <div class="row container align-items-center mx-0 p-0">
             <!-- Moto 1, fila 3 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-7.png" class="img-top card-img-top" />
                 <div class="card-body">
@@ -159,7 +281,7 @@
               </div>
             </div>
             <!-- Moto 2, fila 3 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-8.png" class="img-top" />
                 <div class="card-body">
@@ -171,7 +293,7 @@
               </div>
             </div>
             <!-- Moto 3, fila 3 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-9.png" class="img-top" />
                 <div class="card-body">
@@ -186,7 +308,7 @@
           <!-- Fila 4 de tarjetas de motos -->
           <div class="row container align-items-center mx-0 p-0">
             <!-- Moto 1, fila 4 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-10.png" class="img-top card-img-top" />
                 <div class="card-body">
@@ -198,7 +320,7 @@
               </div>
             </div>
             <!-- Moto 2, fila 4 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-11.png" class="img-top" />
                 <div class="card-body">
@@ -214,7 +336,7 @@
               </div>
             </div>
             <!-- Moto 3, fila 4 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-12.png" class="img-top" />
                 <div class="card-body">
@@ -229,7 +351,7 @@
           <!-- Fila 5 de tarjetas de motos -->
           <div class="row container align-items-center mx-0 p-0">
             <!-- Moto 1, fila 5 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-13.png" class="img-top card-img-top" />
                 <div class="card-body">
@@ -241,7 +363,7 @@
               </div>
             </div>
             <!-- Moto 2, fila 5 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-14.png" class="img-top" />
                 <div class="card-body">
@@ -253,7 +375,7 @@
               </div>
             </div>
             <!-- Moto 3, fila 5 -->
-            <div class="col-4 p-2 bg-red">
+            <div class="col-4 p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-15.png" class="img-top" />
                 <div class="card-body">
