@@ -21,7 +21,7 @@
           <div class="col-6">
             <input type="text" class="form-control" name="buscador" id="buscador" placeholder="Search" />
           </div>
-          <div class="col-4">
+          <div class="col">
             <img class="img-fluid" src="https://http2.mlstatic.com/D_NQ_665279-MLA82474368441_022025-OO.webp" alt="Publicidad de mercado libre" />
           </div>
         </div>
@@ -41,19 +41,18 @@
             <div class="col-1"><p class="font-small">Ayuda</p></div>
           </div>
           <!-- Final de la segunda fila del "HEADER" -->
-          <div class="col-4 row">
+          <div class="col row">
             <div class="col-3"><p class="font-small">Crea tu cuenta</p></div>
-            <div class="col-4"><p class="font-small">Ingresa</p></div>
+            <div class="col"><p class="font-small">Ingresa</p></div>
             <div class="col-3"><p class="font-small">Mis compras</p></div>
             <div class="col-2"><img class="img-small" src="./assets/img/cart_icon.png" alt="Ícono del 'carrito' de compras" /></div>
           </div>
         </div>
       </div>
       <!-- Contenido principal -->
-      <!-- mx-auto, para centrar el contenido -->
       <div class="row mx-5" id="main-content">
         <!-- SideBar -->
-        <div class="col-lg-3 col-md-4 d-lg-block d-md-block d-none mt-4">
+        <div class="col-lg-3 col-md-4 col-sm-3 d-lg-block d-md-block d-none mt-4">
           <p><small class="text-muted">Carros, Motos y Otros</small></p>
           <h5 class="mb-0">Motos</h5>
           <p><small class="text-muted">6.827 resultados</small></p>
@@ -135,7 +134,7 @@
 
             <!-- Máximo - Mínimo -->
             <form>
-              <div class="form-row">
+              <div class="input-group">
                 <div class="col"><input class="col" type="text" name="" id="" placeholder="Máximo" /></div>
                 <p>&minus;</p>
                 <div class="col"><input class="col" type="text" name="" id="" placeholder="Mínimo" /></div>
@@ -175,11 +174,12 @@
           </div>
         </div>
         <!-- Contenido de la página (Imágenes, tarjetas, en este caso, motos...) -->
-        <div class="col-lg-9 col-md-8 col-12">
-          <!-- Fila 1 de tarjetas de motos -->
-          <div class="row align-items-center mx-0 p-0">
+        <div class="col-lg-9 col-md-8 col-sm-9 col-12 mx-auto mt-5">
+          <!-- Contenedor de todas las tarjetas de motos (cuadrícula principal) -->
+          <div class="row mx-0 p-0 row-cols-lg-3 row-cols-md-2 row-cols-sm-2 row-cols-1">
+            <!-- Fila 1 de tarjetas de motos -->
             <!-- Moto 1, fila 1 -->
-            <div class="col-lg-4 col-md-6 col-12 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-1.png" class="img-top card-img-top" />
                 <div class="card-body">
@@ -195,7 +195,7 @@
               </div>
             </div>
             <!-- Moto 2, fila 1 -->
-            <div class="col-lg-4 col-md-6 col-12 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-2.png" class="img-top" />
                 <div class="card-body">
@@ -207,7 +207,7 @@
               </div>
             </div>
             <!-- Moto 3, fila 1 -->
-            <div class="col-lg-4 col-md-6 col-12 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-3.png" class="img-top" />
                 <div class="card-body">
@@ -218,11 +218,9 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Fila 2 de tarjetas de motos -->
-          <div class="row mx-0 p-0">
+            <!-- Fila 2 de tarjetas de motos -->
             <!-- Moto 1, fila 2 -->
-            <div class="col-4 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-4.png" class="img-top card-img-top" />
                 <div class="card-body">
@@ -234,7 +232,7 @@
               </div>
             </div>
             <!-- Moto 2, fila 2 -->
-            <div class="col-4 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-5.png" class="img-top" />
                 <div class="card-body">
@@ -246,7 +244,7 @@
               </div>
             </div>
             <!-- Moto 3, fila 2 -->
-            <div class="col-4 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-6.png" class="img-top" />
                 <div class="card-body">
@@ -257,11 +255,10 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Fila 3 de tarjetas de motos -->
-          <div class="row align-items-center mx-0 p-0">
+
+            <!-- Fila 3 de tarjetas de motos -->
             <!-- Moto 1, fila 3 -->
-            <div class="col-4 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-7.png" class="img-top card-img-top" />
                 <div class="card-body">
@@ -273,7 +270,7 @@
               </div>
             </div>
             <!-- Moto 2, fila 3 -->
-            <div class="col-4 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-8.png" class="img-top" />
                 <div class="card-body">
@@ -285,7 +282,7 @@
               </div>
             </div>
             <!-- Moto 3, fila 3 -->
-            <div class="col-4 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-9.png" class="img-top" />
                 <div class="card-body">
@@ -296,11 +293,9 @@
                 </div>
               </div>
             </div>
-          </div>
-          <!-- Fila 4 de tarjetas de motos -->
-          <div class="row align-items-center mx-0 p-0">
+            <!-- Fila 4 de tarjetas de motos -->
             <!-- Moto 1, fila 4 -->
-            <div class="col-4 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-10.png" class="img-top card-img-top" />
                 <div class="card-body">
@@ -312,7 +307,7 @@
               </div>
             </div>
             <!-- Moto 2, fila 4 -->
-            <div class="col-4 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-11.png" class="img-top" />
                 <div class="card-body">
@@ -328,52 +323,13 @@
               </div>
             </div>
             <!-- Moto 3, fila 4 -->
-            <div class="col-4 p-2">
+            <div class="col p-2">
               <div class="card card-size-col">
                 <img src="./assets/img/mt-12.png" class="img-top" />
                 <div class="card-body">
                   <p class="card-text"><small>Bmw R1200 Gs Adventur Modelo 2016</small></p>
                   <h4>&dollar; 69.900.000</h4>
                   <p class="card-text mb-0"><small>2016 &VerticalSeparator; 90.000 Km</small></p>
-                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Fila 5 de tarjetas de motos -->
-          <div class="row align-items-center mx-0 p-0">
-            <!-- Moto 1, fila 5 -->
-            <div class="col-4 p-2">
-              <div class="card card-size-col">
-                <img src="./assets/img/mt-13.png" class="img-top card-img-top" />
-                <div class="card-body">
-                  <p class="card-text"><small>Royal Enfield 2022</small></p>
-                  <h4>&dollar; 15.200.000</h4>
-                  <p class="card-text mb-0"><small>2022 &VerticalSeparator; 28.000 Km</small></p>
-                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
-                </div>
-              </div>
-            </div>
-            <!-- Moto 2, fila 5 -->
-            <div class="col-4 p-2">
-              <div class="card card-size-col">
-                <img src="./assets/img/mt-14.png" class="img-top" />
-                <div class="card-body">
-                  <p class="card-text"><small>Royal Enfield Himalayan 411</small></p>
-                  <h4>&dollar; 14.500.000</h4>
-                  <p class="card-text mb-0"><small>2021 &VerticalSeparator; 16.408 Km</small></p>
-                  <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
-                </div>
-              </div>
-            </div>
-            <!-- Moto 3, fila 5 -->
-            <div class="col-4 p-2">
-              <div class="card card-size-col">
-                <img src="./assets/img/mt-15.png" class="img-top" />
-                <div class="card-body">
-                  <p class="card-text"><small>Excelente Estado, Llantas Al 80%, Papeles Nuevos</small></p>
-                  <h4>&dollar; 69.900.000</h4>
-                  <p class="card-text mb-0"><small>2019 &VerticalSeparator; 31.000 Km</small></p>
                   <p class="card-text mt-0"><small class="text-muted">Manizales &minus; Caldas</small></p>
                 </div>
               </div>
