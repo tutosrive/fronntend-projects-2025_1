@@ -32,7 +32,8 @@ body{
 }
 
 .card-size-col{
-  height: 370px;
+  min-height: 370px;
+  max-height: 371px;
   display: block;
 }
 
