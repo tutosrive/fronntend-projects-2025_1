@@ -1,0 +1,17 @@
+.color_rojo {
+    color: red;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.color_azul {
+    color: blue;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+.color_verde {
+    color: rgb(43, 255, 0);
+    font-size: 24px;
+    margin-top: 10px;
+}
