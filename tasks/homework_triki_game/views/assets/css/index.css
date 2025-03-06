@@ -12,3 +12,9 @@
 .f-bold{
     font-weight: 800;
 }
+
+.btn-float{
+    position: fixed;
+    bottom: 5vh;
+    transform: translateX(-3vw);
+}
