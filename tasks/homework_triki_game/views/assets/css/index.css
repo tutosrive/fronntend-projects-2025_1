@@ -1,0 +1,43 @@
+.inp-grid {
+    padding: 0; /* Elimina el padding que puede afectar el centrado */
+    text-align: center;
+    line-height: normal; /* Restablece la altura de línea */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90px; /* Asegura una altura definida */
+}
+
+
+/* Fuente en BOLD */
+.f-bold{
+    font-weight: 800;
+}
+
+/* Contenedor principal (cuadrícula) */
+.ctn-main{
+    max-width: 97vw;
+    width: 90vw;
+}
+
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.floating-btn:hover {
+    background-color: #0056b3;
+}
