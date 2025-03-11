@@ -90,7 +90,7 @@ export function generate_modal_get_size_grid() {
  */
 export function generate_grid(size, container) {
     // Clase de bootstrap con un ancho según "size"
-    let width_grid_container = size === 3 ? "w-25" : "w-50";
+    // let width_grid_container = size === 3 ? "w-25" : "w-50";
     // String con sintaxis HTML que contendrá las filas y sus inputs
     let elements = "";
     // Generar "filas" y "columnas"
@@ -113,7 +113,7 @@ export function generate_grid(size, container) {
         // Agregar fila al String de elementos
         elements += generate_element("div", `row p-0 mx-0`, row_inputs).str_html;
     }
-    container.classList.add(width_grid_container);
+    // container.classList.add(width_grid_container);
     // Agregar elementos a la página
     container.innerHTML = elements;
 }
