@@ -1,5 +1,5 @@
 >[!NOTE]
->Notas declase 10/03/2025 desarrllo de frontend REACT
+>Notas de clase 10/03/2025 desarrllo de frontend REACT
 
 # **REACT**
 > [!NOTE] NOTAS DE CLASE
