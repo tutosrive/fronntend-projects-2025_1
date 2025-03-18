@@ -26,6 +26,10 @@ def save_scores(scores):
     with open(DB_FILE, "w") as file:
         json.dump(scores, file, indent=4)
 
+@app.route("/", methods=["GET"])
+def home():
+    return jsonify({"status": "OK", "data": "Bienvenido al backend de Naval Battle AI"}), 200
+
 
 @app.route("/score-recorder", methods=["POST"])
 def score_recorder():

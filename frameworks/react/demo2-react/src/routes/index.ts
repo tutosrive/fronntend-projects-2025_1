@@ -11,6 +11,8 @@ const Alerts = lazy(() => import('../pages/UiElements/Alerts'));
 const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
 const Demo= lazy(() => import('../pages/Demo'));
 
+const ListUsers= lazy(() => import('../pages/Users/List'));
+
 const coreRoutes = [
   {
     path: '/demo',
@@ -62,6 +64,11 @@ const coreRoutes = [
     title: 'Buttons',
     component: Buttons,
   },
+  {
+    path: "/users/list",
+    title:"UsersList",
+    component: ListUsers
+  }
 ];
 
 const routes = [...coreRoutes];
