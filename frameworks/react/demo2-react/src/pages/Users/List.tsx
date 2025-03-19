@@ -26,16 +26,49 @@ const ListUsers = () => {
 
 
     // Funciones para manejar las acciones
-    const handleView = (id: number) => {
-        console.log(`Ver registro con ID: ${id}`);
-
-    };
-
-    const handleEdit = (id: number) => {
-        console.log(`Editar registro con ID: ${id}`);
-
-        // Lógica para editar el registro
-    };
+        const handleView = async(id: number) => {
+            console.log(`Ver registro con ID: ${id}`);
+            const user: User | null = await userService.getUserById(id)
+            
+            let html_content = ''
+            // Recorrer llaves del objeto User
+            for (const key in user){
+                // Saltarse estas propiedades
+                if (["id", "token", "is_active", "password"].find(k => k === key)) continue
+                // Agregar cada atributo al html_content
+                html_content +=`
+                <strong>${key}</strong>: ${user[key]}<br>
+                `
+            }
+            
+            Swal.fire({
+                title: "Visualización",
+                html: html_content,
+                icon: "info",
+                showCloseButton: true,
+                closeButtonHtml: "X",
+                showCancelButton: true,
+                cancelButtonColor: "blue",
+                cancelButtonText: "Cerrar",
+            })
+        };
+    
+        const handleEdit = (id: number) => {
+            console.log(`Editar registro con ID: ${id}`);
+    
+            Swal.fire({
+                title: "Actualización",
+                text: "¿Está seguro de querer actualizar el registro?",
+                icon: "question",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Si, actualizar",
+                cancelButtonText: "No"
+            }).then(async (result) => {
+                console.log(result)
+            });
+        };
 
     const handleDelete = async (id: number) => {
         console.log(`Intentando eliminar usuario con ID: ${id}`);
