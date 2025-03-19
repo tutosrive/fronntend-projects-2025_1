@@ -12,6 +12,8 @@ const Buttons = lazy(() => import('../pages/UiElements/Buttons'));
 const Demo= lazy(() => import('../pages/Demo'));
 
 const ListUsers= lazy(() => import('../pages/Users/List'));
+const ListRols = lazy(()=> import('../pages/Rols/List'))
+const ListPermmissions = lazy(()=> import("../pages/Permissions/List"))
 
 const coreRoutes = [
   {
@@ -68,6 +70,16 @@ const coreRoutes = [
     path: "/users/list",
     title:"UsersList",
     component: ListUsers
+  },
+  {
+    path: 'roles/list',
+    title: 'RolesList',
+    component: ListRols
+  },
+  {
+    path: 'permissions/list',
+    title: 'PermissionsList',
+    component: ListPermmissions
   }
 ];
 
