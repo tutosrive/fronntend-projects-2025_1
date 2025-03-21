@@ -114,7 +114,7 @@ const ListRols = () => {
                                 </thead>
                                 <tbody>
                                     {data.map((item) => (
-                                        <tr key={item.id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200 odd:light:text-black">
+                                        <tr key={item.id} className="odd:bg-white text-black odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
                                             <td className="px-6 py-4 font-medium text-black dark:text-white">{item.name}</td>
                                             <td className="px-6 py-4">{item.name}</td>
                                             <td className="px-6 py-4">{item.description}</td>

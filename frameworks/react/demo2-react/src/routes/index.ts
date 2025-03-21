@@ -14,6 +14,8 @@ const Demo= lazy(() => import('../pages/Demo'));
 const ListUsers= lazy(() => import('../pages/Users/List'));
 const ListRols = lazy(()=> import('../pages/Rols/List'))
 const ListPermmissions = lazy(()=> import("../pages/Permissions/List"))
+const SumPage = lazy(()=> import("../pages/Tests/Sum"));
+const RestaPage = lazy(()=> import("../pages/Tests/Resta"));
 
 const coreRoutes = [
   {
@@ -80,6 +82,16 @@ const coreRoutes = [
     path: 'permissions/list',
     title: 'PermissionsList',
     component: ListPermmissions
+  },
+  {
+    path: 'operations/suma/',
+    title: 'SumaOperation',
+    component: SumPage
+  },
+  {
+    path: 'operations/resta/',
+    title: 'RestaOperation',
+    component: RestaPage
   }
 ];
 
