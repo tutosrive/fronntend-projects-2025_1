@@ -14,8 +14,17 @@ const Demo= lazy(() => import('../pages/Demo'));
 const ListUsers= lazy(() => import('../pages/Users/List'));
 const ListRols = lazy(()=> import('../pages/Rols/List'))
 const ListPermmissions = lazy(()=> import("../pages/Permissions/List"))
+
+const CreaPermission = lazy(()=> import("../pages/Permissions/create"))
+const UpdatePermission = lazy(()=> import("../pages/Permissions/update"))
+
+const CreateRole = lazy(()=> import("../pages/Rols/create"))
+const UpdateRole = lazy(()=> import("../pages/Rols/update"))
+
 const SumPage = lazy(()=> import("../pages/Tests/Sum"));
 const RestaPage = lazy(()=> import("../pages/Tests/Resta"));
+const CreateUser = lazy(()=> import("../pages/Users/create"))
+const UpdateUser = lazy(()=> import("../pages/Users/update"))
 
 const coreRoutes = [
   {
@@ -92,6 +101,36 @@ const coreRoutes = [
     path: 'operations/resta/',
     title: 'RestaOperation',
     component: RestaPage
+  },
+  {
+    path: 'users/create',
+    title: 'CreateUser',
+    component: CreateUser
+  },
+  {
+    path: 'users/update/:id',
+    title: 'UpdateUser',
+    component: UpdateUser
+  },
+  {
+    path: 'permissions/create',
+    title: 'CreatePermission',
+    component: CreaPermission
+  },
+  {
+    path: 'permissions/update/:id',
+    title: 'UpdatePermission',
+    component: UpdatePermission
+  },
+  {
+    path: 'roles/create',
+    title: 'CreateRole',
+    component: CreateRole
+  },
+  {
+    path: 'roles/update/:id',
+    title: 'UpdateRoles',
+    component: UpdateRole
   }
 ];
 

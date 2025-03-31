@@ -1,13 +1,15 @@
-import { Eye, Edit, Trash2 } from "lucide-react";
+import { Eye, Edit, Trash2, BadgePlus } from "lucide-react";
 import { useState, useEffect } from "react";
 
 import { userService } from "../../services/userService";
 import Swal from "sweetalert2";
 import { User } from "../../models/User";
-
+import { useParams, useNavigate } from "react-router-dom";
 
 const ListUsers = () => {
 
+    // Para "redirigir" a rutas (Navegar por la URL)
+    const navigate = useNavigate();
 
     // Estado para almacenar los datos del JSON
     const [data, setData] = useState<User[]>([]);
@@ -55,19 +57,7 @@ const ListUsers = () => {
     
         const handleEdit = (id: number) => {
             console.log(`Editar registro con ID: ${id}`);
-    
-            Swal.fire({
-                title: "Actualización",
-                text: "¿Está seguro de querer actualizar el registro?",
-                icon: "question",
-                showCancelButton: true,
-                confirmButtonColor: "#3085d6",
-                cancelButtonColor: "#d33",
-                confirmButtonText: "Si, actualizar",
-                cancelButtonText: "No"
-            }).then(async (result) => {
-                console.log(result)
-            });
+            navigate(`/users/update/${id}`)
         };
 
     const handleDelete = async (id: number) => {
@@ -97,15 +87,23 @@ const ListUsers = () => {
         });
     };
 
+    const handleCreate = () => {
+        console.log("Crear nuevo usuario");
+        navigate("/users/create")
+    }
+
     return (
         <div className="grid grid-cols-1 gap-9">
             <div className="flex flex-col gap-9">
                 {/* <!-- Input Fields --> */}
                 <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <div className="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                <div className="flex border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                         <h3 className="font-medium text-black dark:text-white">
                             Listado
                         </h3>
+                        <button 
+                        onClick={()=> handleCreate()}
+                        className=" text-blue-600 dark:text-blue-500 ml-auto"><BadgePlus size={30}/></button>
                     </div>
                     <div className="flex flex-col gap-5.5 p-6.5">
                         <div className="overflow-x-auto">
@@ -123,8 +121,8 @@ const ListUsers = () => {
                                 </thead>
                                 <tbody>
                                     {data.map((item) => (
-                                        <tr key={item.id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
-                                            <td className="px-6 py-4 font-medium text-gray-900 dark:text-white">{item.name}</td>
+                                        <tr key={item.id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 even:dark:text-white text-black border-b dark:border-gray-700 border-gray-200">
+                                            <td className="px-6 py-4 text-gray-900">{item.name}</td>
                                             <td className="px-6 py-4">{item.email}</td>
                                             <td className="px-6 py-4">{item.age}</td>
                                             <td className="px-6 py-4">{item.city}</td>

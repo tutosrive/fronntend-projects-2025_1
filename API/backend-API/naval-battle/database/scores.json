@@ -1,55 +1,14 @@
 {
     "fbc": {
-        "score": 30,
+        "score": 15,
         "country_code": "co"
     },
-    "srm": {
-        "score": 13,
+    "SRM": {
+        "score": 124,
         "country_code": "co"
     },
-    "srm2": {
-        "score": 34,
-        "country_code": "co"
-    },
-    "srm3": {
-        "score": 67,
-        "country_code": "co"
-    },
-    "srm4": {
-        "score": 3,
-        "country_code": "co"
-    },
-    "srm5": {
-        "score": 3,
-        "country_code": "co"
-    },
-    "srm6": {
-        "score": 3,
-        "country_code": "co"
-    },
-    "srm23wew4": {
-        "score": 3,
-        "country_code": "co"
-    },
-    "srmwedwe4": {
-        "score": 3,
-        "country_code": "co"
-    },
-    "srwerwerwm4": {
-        "score": 3,
-        "country_code": "co"
-    },
-    "srm4sdsfsd": {
-        "score": 3,
-        "country_code": "co"
-    },
-
-    "srmdsdsd4": {
-        "score": 3,
-        "country_code": "co"
-    },
-    "srfefrferm4": {
-        "score": 3,
+    "PATO": {
+        "score": -315,
         "country_code": "co"
     }
 }

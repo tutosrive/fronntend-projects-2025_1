@@ -1,17 +1,16 @@
-import { Eye, Edit, Trash2 } from "lucide-react";
+import { Eye, Edit, Trash2, BadgePlus } from "lucide-react";
 import { useState, useEffect } from "react";
 
 import { permissionService } from "../../services/permissionService";
 import Swal from "sweetalert2";
 import { Permission } from "../../models/Permission";
+import { useNavigate } from "react-router-dom";
 
 
 const ListPermissions = () => {
-
-
     // Estado para almacenar los datos del JSON
     const [data, setData] = useState<Permission[]>([]);
-
+    const navigate = useNavigate();
     // 🔹 Llamar `fetchData` cuando el componente se monta
     useEffect(() => {
         fetchData();
@@ -50,19 +49,7 @@ const ListPermissions = () => {
 
     const handleEdit = (id: number) => {
         console.log(`Editar registro con ID: ${id}`);
-
-        Swal.fire({
-            title: "Actualización",
-            text: "¿Está seguro de querer actualizar el registro?",
-            icon: "question",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, actualizar",
-            cancelButtonText: "No"
-        }).then(async (result) => {
-            console.log(result)
-        });
+        navigate(`/permissions/update/${id}`);
     };
 
     const handleDelete = async (id: number) => {
@@ -92,15 +79,23 @@ const ListPermissions = () => {
         });
     };
 
+    const handleCreate = async()=>{
+        console.log(`Creando nuevo permiso`);
+        navigate(`/permissions/create`);
+    }
+
     return (
         <div className="grid grid-cols-1 gap-9">
             <div className="flex flex-col gap-9">
                 {/* <!-- Input Fields --> */}
                 <div className="rounded-sm border border-stroke bg-white shadow-default dark:border-strokedark dark:bg-boxdark">
-                    <div className="border-b border-stroke px-6.5 py-4 dark:border-strokedark">
+                    <div className="flex border-b border-stroke px-6.5 py-4 dark:border-strokedark">
                         <h3 className="font-medium text-black dark:text-white">
                             Listado
                         </h3>
+                        <button 
+                        onClick={()=> handleCreate()}
+                        className=" text-blue-600 dark:text-blue-500 ml-auto"><BadgePlus size={30}/></button>
                     </div>
                     <div className="flex flex-col gap-5.5 p-6.5">
                         <div className="overflow-x-auto">
@@ -114,7 +109,7 @@ const ListPermissions = () => {
                                 </thead>
                                 <tbody>
                                     {data.map((item) => (
-                                        <tr key={item.id} className="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
+                                        <tr key={item.id} className="odd:bg-white text-black odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b even:dark:text-white dark:border-gray-700 border-gray-200">
                                             <td className="px-6 py-4">{item.method}</td>
                                             <td className="px-6 py-4">{item.url}</td>
                                             <td className="px-6 py-4 space-x-2">

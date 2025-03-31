@@ -29,7 +29,7 @@ class PermissionService {
             const response = await axios.post<Permission>(API_URL, permission);
             return response.data;
         } catch (error) {
-            console.error("Error al crear usuario:", error);
+            console.error("Error al crear permiso:", error);
             return null;
         }
     }
@@ -39,7 +39,7 @@ class PermissionService {
             const response = await axios.put<Permission>(`${API_URL}/${id}`, permission);
             return response.data;
         } catch (error) {
-            console.error("Error al actualizar usuario:", error);
+            console.error("Error al actualizar permiso:", error);
             return null;
         }
     }
@@ -49,7 +49,7 @@ class PermissionService {
             await axios.delete(`${API_URL}/${id}`);
             return true;
         } catch (error) {
-            console.error("Error al eliminar usuario:", error);
+            console.error("Error al eliminar permiso:", error);
             return false;
         }
     }
