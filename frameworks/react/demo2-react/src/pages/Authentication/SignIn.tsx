@@ -7,15 +7,17 @@ import { User } from "../../models/User";
 import SecurityService from '../../services/securityService';
 
 import Breadcrumb from "../../components/Breadcrumb";
-
+import { useNavigate } from "react-router-dom";
 
 const SignIn: React.FC = () => {
+  const navigate = useNavigate();
 
   const handleLogin = async (user: User) => {
     console.log("aqui " + JSON.stringify(user))
     try {
       const response = await SecurityService.login(user);
       console.log('Usuario autenticado:', response);
+      navigate("/");
     } catch (error) {
       console.error('Error al iniciar sesión', error);
     }

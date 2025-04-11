@@ -1,11 +1,17 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from "react-redux";
+import { RootState } from "../store/store";
+import { useNavigate } from "react-router-dom";
 
 import UserOne from '../images/user/user-01.png';
+import securityService from '../services/securityService';
 
 const DropdownUser = () => {
+  const navigate = useNavigate();
   const [dropdownOpen, setDropdownOpen] = useState(false);
-
+  // Pendiente al cambio del valor de la variable
+  const user = useSelector((state: RootState) => state.user.user);
   const trigger = useRef<any>(null);
   const dropdown = useRef<any>(null);
 
@@ -36,7 +42,8 @@ const DropdownUser = () => {
   });
 
   return (
-    <div className="relative">
+    <div>
+      {user? <div className="relative">
       <Link
         ref={trigger}
         onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -45,7 +52,7 @@ const DropdownUser = () => {
       >
         <span className="hidden text-right lg:block">
           <span className="block text-sm font-medium text-black dark:text-white">
-            Thomas Anree
+           {user?.name}
           </span>
           <span className="block text-xs">UX Designer</span>
         </span>
@@ -155,7 +162,9 @@ const DropdownUser = () => {
             </Link>
           </li>
         </ul>
-        <button className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
+        <button
+        onClick={()=>securityService.logout()}
+        className="flex items-center gap-3.5 py-4 px-6 text-sm font-medium duration-300 ease-in-out hover:text-primary lg:text-base">
           <svg
             className="fill-current"
             width="22"
@@ -177,6 +186,7 @@ const DropdownUser = () => {
         </button>
       </div>
       {/* <!-- Dropdown End --> */}
+    </div>: <button onClick={()=>navigate('/auth/signin')}>LOGIN</button>}
     </div>
   );
 };

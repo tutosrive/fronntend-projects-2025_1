@@ -49,6 +49,8 @@ class SecurityService extends EventTarget {
         this.user = {};
         localStorage.removeItem("user");
         this.dispatchEvent(new CustomEvent("userChange", { detail: null }));
+        // Esparcir el evento de cambio de valor de la variable
+        store.dispatch(setUser(null));
     }
 
     isAuthenticated() {
