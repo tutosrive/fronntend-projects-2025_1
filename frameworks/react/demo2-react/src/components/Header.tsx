@@ -4,6 +4,7 @@ import DarkModeSwitcher from './DarkModeSwitcher';
 import DropdownMessage from './DropdownMessage';
 import DropdownNotification from './DropdownNotification';
 import DropdownUser from './DropdownUser';
+import NavBar from './NavBar'
 
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
@@ -106,7 +107,7 @@ const Header = (props: {
             {/* <!-- Notification Menu Area --> */}
             <DropdownNotification />
             {/* <!-- Notification Menu Area --> */}
-
+            <NavBar></NavBar>
             {/* <!-- Chat Notification Area --> */}
             <DropdownMessage />
             {/* <!-- Chat Notification Area --> */}
