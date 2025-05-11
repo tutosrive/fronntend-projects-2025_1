@@ -1,1 +1,37 @@
-<p>list works!</p>
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8"></div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <h3 class="mb-0">Theaters</h3>
+                    <button class="btn btn-info" (click)="create()">Create</button>
+                </div>
+                <div class="card-body">
+                    <table class="table">
+                        <thead>
+                            <td>Id</td>
+                            <td>Ubicación</td>
+                            <td>Capacidad</td>
+                            <td>Opciones</td>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let theater of theaters">
+                                <td>{{ theater.id }}</td>
+                                <td>{{ theater.location }}</td>
+                                <td>{{ theater.capacity }}</td>
+                                <td>
+                                    <button class="btn btn-success" (click)="view(theater.id)">View</button>
+                                    <button class="btn btn-primary" (click)="edit(theater.id)">Editar</button>
+                                    <button class="btn btn-danger" (click)="delete(theater.id)">Eliminar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

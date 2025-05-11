@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { TheatersRoutingModule } from './theaters-routing.module';
 import { ListComponent } from './list/list.component';
 import { ManageComponent } from './manage/manage.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { ManageComponent } from './manage/manage.component';
   ],
   imports: [
     CommonModule,
-    TheatersRoutingModule
+    TheatersRoutingModule,
+    FormsModule
   ]
 })
 export class TheatersModule { }

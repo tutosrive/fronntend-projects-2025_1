@@ -1,1 +1,42 @@
-<p>manage works!</p>
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8"></div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Table -->
+  <div class="row">
+    <div class="col">
+      <div class="card shadow">
+        <div class="card-header bg-transparent">
+          <h3 class="mb-0" *ngIf="mode==1">View</h3>
+          <h3 class="mb-0" *ngIf="mode==2">Create</h3>
+          <h3 class="mb-0" *ngIf="mode==3">Update</h3>
+        </div>
+        <div class="card-body">
+            <div class="card-body container">
+                <div class="row">
+                    <div class="col-3">ID</div>
+                    <div class="col-9"><input type="text" class="form-control" [(ngModel)]="theater.id" disabled></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-3">Ubicación</div>
+                    <div class="col-9"><input type="text" class="form-control" [(ngModel)]="theater.location" [disabled]="mode==1"></div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-3">Capacidad</div>
+                    <div class="col-9"><input type="number" class="form-control" [(ngModel)]="theater.capacity" [disabled]="mode==1"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3"></div>
+                    <div class="col-9">
+                        <button type="button" class="btn btn-primary btn-block" (click)="back()" *ngIf="mode==1">Regresar</button>
+                        <button type="button" class="btn btn-success btn-block" (click)="create()" *ngIf="mode==2">Crear</button>
+                        <button type="button" class="btn btn-warning btn-block" (click)="update()" *ngIf="mode==3">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

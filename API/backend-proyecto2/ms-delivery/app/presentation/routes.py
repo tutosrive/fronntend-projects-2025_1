@@ -14,7 +14,9 @@ from flask import Flask, send_from_directory
 import os
 from flask import send_file, abort,send_from_directory
 from flask import current_app
+from flask_cors import CORS
 main_bp = Blueprint('main', __name__)
+CORS(main_bp)
 
 # Restaurant routes
 @main_bp.route('/restaurants', methods=['GET'])
