@@ -1,42 +1,61 @@
 <div class="header bg-gradient-danger pb-8 pt-5 pt-md-8"></div>
 <!-- Page content -->
 <div class="container-fluid mt--7">
-  <!-- Table -->
-  <div class="row">
-    <div class="col">
-      <div class="card shadow">
-        <div class="card-header bg-transparent">
-          <h3 class="mb-0" *ngIf="mode==1">View</h3>
-          <h3 class="mb-0" *ngIf="mode==2">Create</h3>
-          <h3 class="mb-0" *ngIf="mode==3">Update</h3>
-        </div>
-        <div class="card-body">
-            <div class="card-body container">
-                <div class="row">
-                    <div class="col-3">ID</div>
-                    <div class="col-9"><input type="text" class="form-control" [(ngModel)]="theater.id" disabled></div>
+    <!-- Table -->
+    <div class="row">
+        <div class="col">
+            <div class="card shadow">
+                <div class="card-header bg-transparent">
+                    <h3 class="mb-0" *ngIf="mode == 1">View</h3>
+                    <h3 class="mb-0" *ngIf="mode == 2">Create</h3>
+                    <h3 class="mb-0" *ngIf="mode == 3">Update</h3>
                 </div>
-                <br>
-                <div class="row">
-                    <div class="col-3">Ubicación</div>
-                    <div class="col-9"><input type="text" class="form-control" [(ngModel)]="theater.location" [disabled]="mode==1"></div>
-                </div>
-                <br>
-                <div class="row">
-                    <div class="col-3">Capacidad</div>
-                    <div class="col-9"><input type="number" class="form-control" [(ngModel)]="theater.capacity" [disabled]="mode==1"></div>
-                </div>
-                <div class="row">
-                    <div class="col-3"></div>
-                    <div class="col-9">
-                        <button type="button" class="btn btn-primary btn-block" (click)="back()" *ngIf="mode==1">Regresar</button>
-                        <button type="button" class="btn btn-success btn-block" (click)="create()" *ngIf="mode==2">Crear</button>
-                        <button type="button" class="btn btn-warning btn-block" (click)="update()" *ngIf="mode==3">Actualizar</button>
-                    </div>
+                <div class="card-body">
+                    <form class="form" [formGroup]="theFormGroup">
+                        <div class="card-body container">
+                            <div class="row">
+                                <div class="col-3">ID</div>
+                                <div class="col-9"><input type="text" class="form-control"  disabled /></div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-3">Ubicación</div>
+                                <div class="col-9">
+                                    <!-- formControlName: Aplicar la regla de validación -->
+                                    <input type="text" class="form-control"  [disabled]="mode == 1" formControlName="location" />
+                                    <!-- Mensaje de error/inclunplimiento de la regla -->
+                                    <div *ngIf="getTheFormGroup.location.errors && (getTheFormGroup.location.dirty || getTheFormGroup.location.touched || trySend)">
+                                        <strong *ngIf="getTheFormGroup.location.errors.required" class="msnError">Requerido</strong>
+                                        <strong *ngIf="getTheFormGroup.location.errors.minlength" class="msnError">Inválido </strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-3">Capacidad</div>
+                                <div class="col-9">
+                                  <!-- formControlName="capacity": Aplicar la regla -->
+                                    <input type="number" class="form-control" [disabled]="mode == 1" formControlName="capacity" />
+                                    <!-- Mensaje de error/inclunplimiento de la regla -->
+                                    <div *ngIf="getTheFormGroup.capacity.errors && (getTheFormGroup.capacity.dirty || getTheFormGroup.capacity.touched || trySend)">
+                                        <strong *ngIf="getTheFormGroup.capacity.errors.min" class="msnError">Valor mínimo debe ser 1</strong>
+                                        <strong *ngIf="getTheFormGroup.capacity.errors.max" class="msnError">Valor máximo 100 </strong>
+                                        <strong *ngIf="getTheFormGroup.capacity.errors.required" class="msnError">Requerido</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3"></div>
+                                <div class="col-9">
+                                    <button type="button" class="btn btn-primary btn-block" (click)="back()" *ngIf="mode == 1">Regresar</button>
+                                    <button type="button" class="btn btn-success btn-block" (click)="create()" *ngIf="mode == 2">Crear</button>
+                                    <button type="button" class="btn btn-warning btn-block" (click)="update()" *ngIf="mode == 3">Actualizar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-      </div>
     </div>
-  </div>
 </div>

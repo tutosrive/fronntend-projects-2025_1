@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Theater } from 'src/app/models/theater.model';
 import { TheaterService } from 'src/app/services/theater.service';
@@ -12,9 +13,18 @@ import Swal from 'sweetalert2';
 export class ManageComponent implements OnInit {
   mode:number // 1: View 2: Create 3: Update
   theater:Theater
+  theFormGroup: FormGroup; // Policía de formulario
+  trySend:boolean
 
-  constructor(private activatedRoute: ActivatedRoute, private theatersService:TheaterService, private router:Router) {
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private theatersService:TheaterService,
+    private router:Router,
+    private theFormBuilder: FormBuilder
+  ) {
+    this.trySend = false
     this.theater = {id: 0}
+    this.configFormGroup()
   }
 
   ngOnInit(): void {
@@ -33,12 +43,30 @@ export class ManageComponent implements OnInit {
 
   }
 
+  configFormGroup() {
+    this.theFormGroup = this.theFormBuilder.group({
+      // primer elemento del vector, valor por defecto
+      // lista, serán las reglas
+      capacity: [0, [Validators.required, Validators.min(1), Validators.max(100)]],
+      location: ['', [Validators.required, Validators.minLength(2)]]
+    })
+  }
+  
+  
+  get getTheFormGroup() {
+    return this.theFormGroup.controls
+  }
+
   getTheater(id:number){
     // Get data theater by id from backend.
     this.theatersService.view(id).subscribe({
       next: (response) => {
         this.theater = response;
         console.log(response)
+        this.theFormGroup.patchValue({
+          capacity: this.theater.capacity,
+          location: this.theater.location
+        });
       },
       error: (error) => {
         console.error('Error fetching theater:', error);
@@ -50,7 +78,16 @@ export class ManageComponent implements OnInit {
     this.router.navigate(['theaters/list'])
   }
   create() {
-    this.theatersService.create(this.theater).subscribe({
+    this.trySend = true
+    if (this.theFormGroup.invalid) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Por favor, complete todos los campos requeridos.',
+        icon: 'error',
+      })
+      return;
+    }
+    this.theatersService.create(this.theFormGroup.value).subscribe({
       next: (theater) => {
         console.log('Theater created successfully:', theater);
         Swal.fire({
@@ -66,7 +103,16 @@ export class ManageComponent implements OnInit {
     });
   }
   update() {
-    this.theatersService.update(this.theater).subscribe({
+    this.trySend = true
+    if (this.theFormGroup.invalid) {
+      Swal.fire({
+        title: 'Error!',
+        text: 'Por favor, complete todos los campos requeridos.',
+        icon: 'error',
+      })
+      return;
+    }
+    this.theatersService.update(this.theFormGroup.value).subscribe({
       next: (theater) => {
         console.log('Theater updated successfully:', theater);
         Swal.fire({
