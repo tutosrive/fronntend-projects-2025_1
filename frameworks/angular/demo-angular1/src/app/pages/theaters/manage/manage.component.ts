@@ -47,6 +47,7 @@ export class ManageComponent implements OnInit {
     this.theFormGroup = this.theFormBuilder.group({
       // primer elemento del vector, valor por defecto
       // lista, serán las reglas
+      id: [0, []], // Se valdia en el backend
       capacity: [0, [Validators.required, Validators.min(1), Validators.max(100)]],
       location: ['', [Validators.required, Validators.minLength(2)]]
     })
@@ -64,6 +65,7 @@ export class ManageComponent implements OnInit {
         this.theater = response;
         console.log(response)
         this.theFormGroup.patchValue({
+          id: this.theater.id, // Traído del backend
           capacity: this.theater.capacity,
           location: this.theater.location
         });

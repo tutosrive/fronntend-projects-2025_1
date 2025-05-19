@@ -14,17 +14,19 @@ class Driver(db.Model):
     
     # Relationship with Shift
     shifts = db.relationship('Shift', back_populates='driver', cascade='all, delete-orphan')
+    # Month counter orders (by driver)
+    order_counters = db.relationship('DriverOrderCounterMonth', back_populates='driver', cascade='all, delete-orphan')
     
     def __repr__(self):
         return f'<Driver {self.name}>'
     
     def to_dict(self):
         return {
-            'id': self.id,
-            'name': self.name,
-            'license_number': self.license_number,
-            'phone': self.phone,
-            'email': self.email,
-            'status': self.status,
-            'created_at': self.created_at.isoformat() if self.created_at else None
-        }
+        'id': self.id,
+        'name': self.name,
+        'license_number': self.license_number,
+        'phone': self.phone,
+        'email': self.email,
+        'status': self.status,
+        'created_at': self.created_at.isoformat() if self.created_at else None
+    }

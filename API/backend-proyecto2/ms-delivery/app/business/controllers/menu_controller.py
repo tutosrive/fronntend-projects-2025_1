@@ -52,3 +52,8 @@ class MenuController:
         db.session.commit()
         
         return {"message": "Menu item deleted successfully"}, 200
+
+    @staticmethod
+    def get_by_restaurant_id(restaurant_id):
+        menus = Menu.query.filter_by(restaurant_id=restaurant_id).all()
+        return [menu.to_dict() for menu in menus]

@@ -14,9 +14,9 @@ from flask import Flask, send_from_directory
 import os
 from flask import send_file, abort,send_from_directory
 from flask import current_app
-from flask_cors import CORS
+# from flask_cors import CORS
 main_bp = Blueprint('main', __name__)
-CORS(main_bp)
+# CORS(main_bp)
 
 # Restaurant routes
 @main_bp.route('/restaurants', methods=['GET'])
@@ -38,6 +38,11 @@ def update_restaurant(id):
 @main_bp.route('/restaurants/<int:id>', methods=['DELETE'])
 def delete_restaurant(id):
     return jsonify(RestaurantController.delete(id))
+
+# Filter menus by restaurant
+@main_bp.route('/restaurants/<int:restaurant_id>/menus', methods=['GET'])
+def get_restaurant_menus(restaurant_id):
+    return jsonify(MenuController.get_by_restaurant_id(restaurant_id))
 
 # Product routes
 @main_bp.route('/products', methods=['GET'])
@@ -185,6 +190,19 @@ def update_driver(id):
 @main_bp.route('/drivers/<int:id>', methods=['DELETE'])
 def delete_driver(id):
     return jsonify(DriverController.delete(id))
+
+# Contadores
+@main_bp.route('/drivers/<int:driver_id>/counter', methods=['PUT'])
+def update_driver_counter(driver_id):
+    data = request.get_json() or {}
+    delta = data.get('delta')
+    if not isinstance(delta, int):
+        return jsonify({'message': 'Se requiere integer "delta"'}), 400
+    return jsonify(DriverController.upsert_driver_counter(driver_id, delta)), 200
+
+@main_bp.route('/drivers/counters', methods=['GET'])
+def get_driver_counters():
+    return jsonify(DriverController.get_order_counters()), 200
 
 # Shift routes
 @main_bp.route('/shifts', methods=['GET'])
