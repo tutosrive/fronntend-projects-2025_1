@@ -1,6 +1,7 @@
 from app import db
 from app.business.models.customer import Customer
 from flask import jsonify
+from sqlalchemy.sql import func
 
 class CustomerController:
     @staticmethod
@@ -49,3 +50,21 @@ class CustomerController:
         db.session.commit()
         
         return {"message": "Customer deleted successfully"}, 200
+
+    @staticmethod
+    def get_registration_history():
+        """
+        Retorna la cantidad de usuarios registrados por mes.
+        """
+        results = (
+            db.session.query(
+                func.strftime('%Y-%m', Customer.created_at).label('month'),
+                func.count(Customer.id).label('registrations')
+            )
+            .group_by('month')
+            .order_by('month')
+            .all()
+        )
+
+        history = [{'month': row.month, 'registrations': row.registrations} for row in results]
+        return history

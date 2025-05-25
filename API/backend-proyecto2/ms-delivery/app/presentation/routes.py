@@ -8,8 +8,9 @@ from app.business.controllers.address_controller import AddressController
 from app.business.controllers.motorcycle_controller import MotorcycleController
 from app.business.controllers.driver_controller import DriverController
 from app.business.controllers.shift_controller import ShiftController
-from app.business.controllers.issue_controller import IssueController
 from app.business.controllers.photo_controller import PhotoController
+from app.business.controllers.issue_controller import IssueController
+from app.business.controllers.month_order_stats_controller import MonthStatsController
 from flask import Flask, send_from_directory
 import os
 from flask import send_file, abort,send_from_directory
@@ -107,6 +108,11 @@ def update_customer(id):
 def delete_customer(id):
     return jsonify(CustomerController.delete(id))
 
+# Historial de usuarios registrados
+@main_bp.route('/stats/customers/registration-history', methods=['GET'])
+def get_customer_registration_history():
+    return jsonify(CustomerController.get_registration_history())
+
 # Order routes
 @main_bp.route('/orders', methods=['GET'])
 def get_orders():
@@ -127,6 +133,15 @@ def update_order(id):
 @main_bp.route('/orders/<int:id>', methods=['DELETE'])
 def delete_order(id):
     return jsonify(OrderController.delete(id))
+
+# Estadísticas de órdenes por mes
+@main_bp.route('/stats/orders/months', methods=['GET'])
+def get_month_order_stats():
+    """
+    GET /stats/month-orders
+    Devuelve [{ year_month, total_orders }, ...] ordenados de mayor a menor.
+    """
+    return jsonify(MonthStatsController.get_month_order_stats()), 200
 
 # Address routes
 @main_bp.route('/addresses', methods=['GET'])
@@ -200,7 +215,7 @@ def update_driver_counter(driver_id):
         return jsonify({'message': 'Se requiere integer "delta"'}), 400
     return jsonify(DriverController.upsert_driver_counter(driver_id, delta)), 200
 
-@main_bp.route('/drivers/counters', methods=['GET'])
+@main_bp.route('/stats/drivers/counters', methods=['GET'])
 def get_driver_counters():
     return jsonify(DriverController.get_order_counters()), 200
 
@@ -273,6 +288,7 @@ def update_photo(id):
 @main_bp.route('/photos/<int:id>', methods=['DELETE'])
 def delete_photo(id):
     return jsonify(PhotoController.delete(id))
+
 
 ############## Carga imágenes
 
