@@ -13,6 +13,8 @@ import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { AppRoutingModule } from "./app.routing";
 import { ComponentsModule } from "./components/components.module";
 import { AuthInterceptor } from "./interceptors/auth.interceptor";
+import { AuthenticatedGuard } from "./guardians/authenticated.guard";
+import { NoAuthenticatedGuard } from "./guardians/no-authenticated.guard";
 
 @NgModule({
     imports: [BrowserAnimationsModule, FormsModule, HttpClientModule, ComponentsModule, NgbModule, RouterModule, AppRoutingModule],
@@ -23,6 +25,8 @@ import { AuthInterceptor } from "./interceptors/auth.interceptor";
             useClass: AuthInterceptor,
             multi: true,
         },
+        AuthenticatedGuard,
+        NoAuthenticatedGuard,
     ],
     bootstrap: [AppComponent],
 })
