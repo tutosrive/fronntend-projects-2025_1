@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { EventEmitter, Injectable } from "@angular/core";
+import { EventEmitter } from "@angular/core";
 import { Socket } from "ngx-socket-io";
 import { environment } from "src/environments/environment";
 import { SecurityService } from "./security.service";

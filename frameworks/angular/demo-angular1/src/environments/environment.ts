@@ -6,7 +6,7 @@ export const environment = {
     production: false,
     url_ms_cinema: "https://5d4b2907-7fe5-4c00-8004-39130ff76721.mock.pstmn.io", // Normal mock
     url_ms_security: "https://1a75eb21-0195-4ca3-befd-714c60982fea.mock.pstmn.io", // Security mock
-    url_ms_socket: "http://0.0.0.0:5000",
+    url_ms_socket: "http://127.0.0.1:5000",
 };
 
 /*
